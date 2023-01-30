@@ -4,24 +4,27 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import AnimeList from './AnimeList';
 
-export default function AnimeCard() {
+export default function AnimeCard({item}) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth:300, minWidth: 275 }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
-          image="https://www.shutterstock.com/image-illustration/aesthetic-illustration-girl-sitting-on-600w-1919058461.jpg"
+          height="100%"
+          image={item.images.jpg.image_url}
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Anime
+            {item.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            Episode:{item.episodes}
+          </Typography>
+          <Typography>
+            Rating:{item.rating}
           </Typography>
         </CardContent>
       </CardActionArea>

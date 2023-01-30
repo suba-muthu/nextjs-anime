@@ -1,12 +1,12 @@
 import React from 'react'
 import AnimeCard from './animeCard'
 
-export default function AnimeList({anime}) {
+export default function AnimeList({animes}) {
   return (
     <div>
         {
-            anime.map((item) => 
-            <AnimeCard />
+            animes.map((item) => 
+            <AnimeCard key={item.mal_id} item={item}/>
             )
         }
     </div>
